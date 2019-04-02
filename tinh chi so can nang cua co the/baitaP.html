@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let weight = parseInt(prompt('can nang'));
+    let height = parseInt(prompt('chieu cao'));
+    let BMI = (weight)/(height*height);
+    if(BMI < 18.5) {
+        alert('underweight')
+    } else if  (BMI < 25.0) {
+        alert('normal')
+    } else if  (BMI < 30.0) {
+        alert('overweight')
+    } else {
+        alert('obese')           
+    }    
+        
+    
+    
+    </script>
+</body>
+</html>
