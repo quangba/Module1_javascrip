@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        Amount : <br/>
+        <input tyle='text' id='Amount' value=''>
+        <button onclick="chuyentien()" >Convert</button><br/>
+        From Currecy : <br/>    
+    <select>
+        <option value="VND">VND</option>
+    </select> <br/>
+        To Currecy : <br/>
+    <select>
+        <option value='USD'>USD</option>
+    </select>       
+     </form>
+
+     <script>
+         function chuyentien () {
+             let Amount = document.getElementById ('Amount').value
+             let USD = Amount/23000
+             alert('so tien la ' +USD)
+         }
+
+
+     </script>
+</body>
+</html>
