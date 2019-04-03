@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-    <form>
-        <input type='text' id = 'tinhsongay' value=''>
-        <button onclick="ngay()">tinh so ngay</button>
-    </form>
-    <script>
-    function ngay() {
-        let inputday = document.getElementById ('tinhsongay').value
-        let day=parseInt (document.getElementById ('tinhsongay').value);
 
-    
-        switch(day) {
-            case 1 :
-            case 3 :
-            case 5 :
-            case 7 :
-            case 8 :
-            case 10 :
-            case 12 : {
-                alert('thang co 31 ngay')
-            break;     
-            } case 4 :
-            case 6 :
-            case 11: {
-                alert('thang co 30 ngay')
-                break;  
-            } case 2 : {
-                alert ('thang co 28 hoac 29 ngay')
-                break;
-            }     
+<body>
+        <label for="month">month:</label>
+        <input type="text"  value="" id="month">
+        <input type="button" value="check" onclick="check()">
+        <p id="result"></p>
+    <script>
+        let res = document.getElementById('result');
+        function check() {
+            let month = parseInt(document.getElementById('month').value);
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12: {
+                    res.innerHTML='thang co 31 ngay'
+                    break;
+                }
+                case 4:
+                case 6:
+                case 9:
+                case 11: {
+                    res.innerHTML='thang co 30 ngay'
+                    break;
+                }
+                case 2: {
+                    res.innerHTML='thang co 28 hoac 29 ngay'
+                    break;
+                }
+            }
         }
-    }
+
+
+
+
 
 
     </script>
 </body>
-/html>
+
+</html>
