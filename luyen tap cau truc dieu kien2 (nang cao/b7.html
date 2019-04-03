@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    alert('phuong trinh bat 2 co dang ax2 + bx + c = 0')
+    let a = parseInt(prompt('a = ?'))
+    let b = parseInt(prompt('b = ?'))
+    let c = parseInt(prompt('c = ?'))
+    let denta = b*b - 4*a*c
+        if (denta < 0) {
+            alert ( 'phuong trinh vo nghiem')
+        } else if (denta == 0) {
+            x = -(b/2*a)
+            alert ('phuong trinh co nghiem kep' + x)
+        } else {
+            x1 = -b + Math.sqrt(denta)/2*a
+            x2 = -b - Math.sqrt(denta)/2*a 
+            alert('phuong trinh co 2 nghiem x1= ' +x1 + 'x2= ' + x2 )
+        }    
+    </script>
+</body>
+</html>
