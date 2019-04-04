@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id='numA' /> <br /><br />
+        <input type="text" id='numB' /> <br /><br />
+
+        <input type='button' id='cong' value='+' onclick='phepcong()'>
+        <input type='button' id='tru' value='-' onclick="pheptru()" />
+        <input type='button' id='nhan' value='x' onclick='phepnhan()' />
+        <input type='button' id='chia' value=':' onclick="phepchia()" />
+
+    </form>
+    <script>
+        function phepcong() {
+            var A = parseInt(document.getElementById('numA').value);
+            var B = parseInt(document.getElementById('numB').value);
+            var cong = A + B
+            alert('ket qua la : ' + cong)
+        }
+        function pheptru() {
+            let A = parseInt(document.getElementById('numA').value)
+            let B = parseInt(document.getElementById('numB').value)
+            let tru = A - B
+            alert('ket qua la :' + tru)
+        }
+        function phepnhan() {
+            let A = parseInt(document.getElementById('numA').value)
+            var B = parseInt(document.getElementById('numB').value);
+            let nhan = A * B
+            alert('ket qua la:' + nhan)
+        }
+        function phepchia() {
+            var A = parseInt(document.getElementById('numA').value);
+            var B = parseInt(document.getElementById('numB').value);
+            let chia = A / B
+            alert('ket qua la :' + chia)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
