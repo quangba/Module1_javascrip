@@ -10,16 +10,17 @@
 
 <body>
     <script>
-        document.write('<table border = 1 width = 80%>')
+        document.write('<table border = 1 width = 70a%>')
         let i;
         let j;
-        for (j = 1; j < 10; j++) {
+        for(i=1;i<10;i++) {
             document.write('<tr>')
-            for (i = 2; i < 10; i++)
-                document.write('<td>' + i + 'x' + j + '=' + (i * j) + '</td>')
-                document.write ('</tr>')
-        }
-        document.write('</tr></table>')
+            for(j=2;j<10;j++) 
+                document.write('<td>' + j + ' * ' + i + ' = ' + (j*i) + '</td>' )
+                document.write('</tr>')
+        }    
+        
+        
     </script>
 
 </body>
