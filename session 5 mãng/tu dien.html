@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id='word'></input>
+    <input type='button' id='kt' value="kiem tra" onclick="distinonary();">
+    <p id=result></p>
+    <script>
+        let English = ['hello', 'computer', 'bye', 'thinks', 'mouse','love']
+        let VietNamese = ['xin chào', 'máy tính', 'tạm biệt', 'suy nghĩ', 'chuột','yêu']
+        function distinonary() {
+
+            let word = document.getElementById('word').value
+            for (let i = 0; i < English.length; i++) {
+               if( English[i]== word ) {           
+               document.getElementById('result').innerHTML=VietNamese[i]
+               } else {
+                document.getElementById('result').innerHTML='đang cập nhật' 
+               }
+              
+               
+            }      
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Sample Screen <br></br>
+    <input type='text' id='txtvalue'>
+    <input type='button' id='btnadd' value="add" onclick="add_elment_to_array();">
+    <input type="button" id='btndisplay' value="display" onclick="display_array();">
+    <div id=result></div>
+    <script>
+            let array = [];
+            let x = 0
+         
+          function add_elment_to_array() {
+              array[x]= document.getElementById('txtvalue').value;
+              alert ('elment: ' + array[x] + ' index ' + x);
+              x++;
+              document.getElementById('txtvalue').value='';
+          }
+          function display_array() {
+              let a = '<hr/>'
+              for (let i=0;i<array.length;i++) {
+              a += 'elment: ' + i + "=" + array[i] + '<br/>';
+              }
+              document.getElementById('result').innerHTML = a
+          }  
+          
+
+
+    </script>
+
+</body>
+
+</html>
