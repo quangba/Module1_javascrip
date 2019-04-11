@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-    
-            <p id='result'></p>
-    <script>
-        var tong= '';       
-        var mang = [4, 12, 56, 1, 8, 55, 42, 6, 7, 9, 14, -1]
-        for(var i=0; i< mang.length; i++) {
-            if(mang[i] >= 10) {
-                tong += "The number is " + mang[i] + "<br>";
-                total = total + mang[i];                             
-            }
-        }  document.getElementById('result').innerHTML=  tong + '<br>';
-        
-    </script>
 
+<body>
+    <h3>những số lớn hơn 10</h3>
+    <p id=demo></p>
+    <hr><h3>số lớn hơn 10 gồm : </h3></hr>
+        <p id=demo2></p>
+    <script>
+            let array = [1,3,43,54,1,23,54,1,32,98]
+            let value = ''
+            let dem = 0
+            for(let i=0;i<array.length;i++) {
+                if(array[i] >= 10) {
+                    value = value + array[i] + ','
+                    dem = dem +1
+                }
+            }
+            document.getElementById('demo').innerHTML=value
+            document.getElementById('demo2').innerHTML=dem
             
     </script>
+    
+
+    </script>
 </body>
+
 </html>

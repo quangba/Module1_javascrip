@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+        let constellatinon = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+        function dictionary(name) {
+            for(let i in star){
+                if(name==star[i]){
+                    document.write(constellatinon[i]);
+                }
+            }
+        }
+        let a = prompt("nhap ten star:");
+        let b = dictionary(a);
+        document.getElementById(result).innerHTML=b
+    </script>
+</body>
+
+</html>
