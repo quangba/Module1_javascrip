@@ -7,8 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="result"></div>
     <script>
-            
+        function kiemTra(x) {
+            return !isNaN(x)
+        }
+        let a = prompt('can nhap: ');
+        let b = kiemTra(a)
+        document.getElementById('result').innerHTML=b
+    </script>
+   
     </script>
 </body>
 </html>

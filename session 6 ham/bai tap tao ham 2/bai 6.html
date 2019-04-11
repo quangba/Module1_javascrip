@@ -7,19 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="result"></div>
     <script>
-            function processConfirm(answer) {
+            function test(i) {
                 let result=''
-                if(answer == true) {
-                    result = 'Excellent. We will play a nice game of chess'
+                if(i>0) {
+                    result=true
                 } else {
-                    result = 'maybe late then'
+                    result=false
                 }
                 return result
             }
-            let a  = confirm('shall we play a game')
-            let b = processConfirm(a)
-            alert(b)
-    </script>   
+            let a = prompt('so can nhap: ')
+            let b = test(a)
+            document.getElementById('result').innerHTML=b
+    </script>
 </body>
 </html>

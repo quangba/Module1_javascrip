@@ -7,8 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <div id='result'></div>
     <script>
-            
+          function s_hinhTron(r){
+            return r*r*(3.14)
+          }
+          let a = parseInt(prompt('nhap so bat ki'))
+          let b = s_hinhTron(a)
+          document.getElementById('result').innerHTML=b
     </script>
+
 </body>
 </html>
