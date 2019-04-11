@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>CHUYỂN ĐỔI NHIỆT ĐỘ</h3> 
+    Fahrenheit <input type="number" id="chuyen doi" placeholder="nhap vao hihi">
+    <input type="button" id="nhan vao" value="click" onclick="converter();"><br></br>
+    Celcius:
+    <div id=result></div>
+    <script>
+        function converter() {
+            let F = document.getElementById('chuyen doi').value
+            let C = (F - 32)/1.8
+            document.getElementById('result').innerHTML= C
+
+        }
+    </script>
+    
+
+</body>
+</html>
