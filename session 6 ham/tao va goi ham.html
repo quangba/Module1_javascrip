@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function processConfirm(answer) {
+                let result=''
+                if(answer == true) {
+                    result = 'Excellent. We will play a nice game of chess'
+                } else {
+                    result = 'maybe late then'
+                }
+                return result
+            }
+            let a  = confirm('shall we play a game')
+            let b = processConfirm(a)
+            alert(b)
+    </script>
+</body>
+</html>
