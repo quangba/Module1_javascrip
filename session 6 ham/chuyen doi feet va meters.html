@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <hr>CHUYEN DOI FEET VA METERS<hr/>
+    FEET <input type="number" id='chuyen doi' placeholder="nhap vao">
+    <input type="button" id="click" value="click" onclick="convert()" > <br><br/>
+    METERS:
+    <div id='result'></div>
+    <script>
+            function convert() {
+                let F = document.getElementById('chuyen doi').value
+                let M = 0.305*F
+                document.getElementById('result').innerHTML=M
+            }
+    
+    </script>
+
+
+</body>
+</html>
