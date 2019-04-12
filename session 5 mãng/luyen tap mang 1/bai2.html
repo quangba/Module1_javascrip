@@ -8,7 +8,13 @@
 </head>
 <body>
     <script>
-            
+            let array = [1,32,54,6,87,2,54,8,9,5]
+            let max = array[0]
+            for(let i=0;i<array.length;i++) {
+                if(max<array[i])
+                max=array[i]
+            }
+            document.write('số lớn nhất là: ' + max + '<br>' + 'vị trí của số lớn nhất nằm trong mãng: ' + array.indexOf(max))
     </script>
 </body>
 </html>

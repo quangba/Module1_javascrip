@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function myDate(day,month,year) {
+                this.day = day
+                this.month = month
+                this.year = year
+            
+                this.fulldate = function() {
+                return this.day + '/' + this.month + '/' + this.year +'.'
+            }
+            }
+            let date = new myDate(2,2,2007)
+            let a = date.fulldate();
+            alert(a) 
+            
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let mang=[]
+            for(let i=0;i<5;i++) {
+                let a = prompt ('moi nhap: ')
+                mang.push(a)
+            }
+            document.write(mang+ '<br>')
+            let V = parseInt(prompt('nhap V'))
+            for(let j=0;j<mang.length;j++){
+                if(V == mang[j]) {
+                    document.write(V+ 'thuoc mang' )
+                    break;
+                } else {
+                    document.write(V+ '  ko thuoc mang' );
+                    break;   
+                }         
+               
+            }
+           
+            
+    </script>
+</body> 
+</html>
