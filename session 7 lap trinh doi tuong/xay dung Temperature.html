@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let F;
+        let Kelvin;
+        function nhietdo(C) {
+            this.A = C
+            this.chuyensangF = function () {
+                return F = 9 / 5 * this.A + 32
+            }
+            this.chuyensangKelvin = function () {
+                return Kelvin = this.A + 273, 15
+            }
+        }
+            let chuyendoinhietdoC = new nhietdo(25)
+            let nhietdoF = chuyendoinhietdoC.chuyensangF()
+            let nhietdoKelvin = chuyendoinhietdoC.chuyensangKelvin()
+            document.write('25 do C = '+  nhietdoF + 'do F ' + '<br>')
+            document.write('25 do C = '+ nhietdoKelvin + 'do kelvin')
+
+    </script>
+</body>
+
+</html>

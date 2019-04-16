@@ -9,7 +9,7 @@
 <body>
     <script>
             let mang=[]
-            for(let i=0;i<5;i++) {
+            for(let i=0;i<3;i++) {
                 let a = prompt ('moi nhap: ')
                 mang.push(a)
             }
@@ -17,12 +17,12 @@
             let V = parseInt(prompt('nhap V'))
             for(let j=0;j<mang.length;j++){
                 if(V == mang[j]) {
-                    document.write(V+ 'thuoc mang' )
+                    alert(V+ 'thuoc mang' )
                     break;
                 } else {
-                    document.write(V+ '  ko thuoc mang' );
+                   alert(V+ '  ko thuoc mang' );
                     break;   
-                }         
+                }    
                
             }
            

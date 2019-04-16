@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas id="canvas" width="400" height="200" style="background:yellow"></canvas>
+    <script>
+        function Rectangle(width, hight) {
+            this.width = width
+            this.hight = hight
+            this.s_hinhChuNhat = function () {
+                return this.width * this.hight
+            }
+            this.cv_hinhChuNhat = function () {
+                return (this.width + this.hight) * 2
+            }
+        }
+        let obj = new Rectangle(200,50)
+        let chuvi = obj.cv_hinhChuNhat()
+        document.write('chu vi hinh chu nhat la: ' + chuvi + '<br>')
+        let dientich = obj.s_hinhChuNhat()
+        document.write('dien tich hinh chu nhat la: ' + dientich )
+        
+        let c = document.getElementById('canvas')
+        let context = c.getContext('2d')
+        
+        context.fillRect(100,100,200,100)
+       
+    
+        
+    </script>
+</body>
+
+</html>

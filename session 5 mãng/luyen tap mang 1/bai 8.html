@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <p id="result1"></p>
+    <script>
+            let array = []
+            for(let i=0;i<5;i++){
+                let mang = prompt('moi nhap: ')
+                array.push(mang)
+            }
+            document.getElementById('result').innerHTML=array
+                    let B = array.sort(function(a, b) {
+                        return b - a
+                    })
+                    document.getElementById('result1').innerHTML= B
+            
+    </script>
+</body>
+</html>
