@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Apple(weight) {
+            this.weight = weight
+            this.getweight = function () {
+                return this.weight
+            }
+            this.decrease = function () {
+                this.weight--
+                return this.weight
+            }
+        }
+        function Human(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight
+            this.isMale = function () {
+                if (this.gender) {
+                    return nam
+                } else {
+                    return nu
+                }
+            }
+            this.checkApple = function () {
+                return Apple.weight()
+            }
+            this.eat = function() {
+                if(Apple.weight()-- && Apple.weight() > 0)
+                this.weight++
+            }
+            this.say = function() {
+                return 'Toi la: ' + this.name
+            }
+        }
+    </script>
+</body>
+
+</html>
