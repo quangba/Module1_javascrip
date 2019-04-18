@@ -9,39 +9,85 @@
 </head>
 
 <body>
+    <div id="adam"></div>
+    <div id="cannangadam"></div>
+    <div id="eva"></div>
+    <div id="cannangeva"></div>
+    <div id="tao"></div>
+    <div id="cannangtao"></div>
+    <input type="button" id="adameat" value="adam eat" onclick="adameat();">
+    <input type="button" id="evaeat" value="eva eat" onclick="evaeat();">
+
     <script>
         function Apple(weight) {
             this.weight = weight
-            this.getweight = function () {
+            this.App_weight = function () {
                 return this.weight
             }
             this.decrease = function () {
-                this.weight--
+                this.weight -= 1
                 return this.weight
             }
         }
         function Human(name, gender, weight) {
-            this.name = name;
-            this.gender = gender;
+            this.name = name
+            this.gender = gender
             this.weight = weight
             this.isMale = function () {
                 if (this.gender) {
-                    return nam
+                    return 'male'
                 } else {
-                    return nu
+                    return 'female'
                 }
             }
             this.checkApple = function () {
-                return Apple.weight()
+                return Apple.App_weight()
             }
-            this.eat = function() {
-                if(Apple.weight()-- && Apple.weight() > 0)
-                this.weight++
+            this.eat = function () {
+                this.weight += 1
+                return this.weight
             }
-            this.say = function() {
-                return 'Toi la: ' + this.name
+            this.say = function () {
+                return 'my name is: ' + this.name + '. Gender: ' + this.isMale()
+            }
+            this.weightHuman = function () {
+                return this.weight
             }
         }
+        let adam = new Human('adam', true, 70)
+        document.getElementById('adam').innerHTML = adam.say()
+        document.getElementById('cannangadam').innerHTML = adam.weightHuman() + 'kg'
+        let eva = new Human('eva', false, 60)
+        document.getElementById('eva').innerHTML = eva.say()
+        document.getElementById('cannangeva').innerHTML = eva.weightHuman() + 'kg'
+        let tao = new Apple(10)
+        document.getElementById('cannangtao').innerHTML = 'can nang cua tao: ' + tao.App_weight()
+
+        function adameat() {
+            if (tao.weight > 0) {
+                adam.eat()
+                tao.decrease()
+                document.getElementById('cannangadam').innerHTML = adam.weight
+                document.getElementById('cannangtao').innerHTML = 'can nang cua tao: ' + tao.weight;
+            } else {
+                alert('chi an 1 qua tao')
+            }
+        }
+        function evaeat() {
+            if (tao.weight > 0) {
+                eva.eat()
+                tao.decrease()
+
+                document.getElementById('cannangeva').innerHTML = eva.weight
+                document.getElementById('cannangtao').innerHTML = 'can nang cua tao: ' + tao.weight
+            } else {
+                alert('an 1 qua')
+            }
+        }
+
+
+
+
     </script>
 </body>
 
