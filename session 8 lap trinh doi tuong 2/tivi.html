@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="button" id="on" value="On" onclick="a.switchOn();">    
+        <input type="button" id="off" value="Off" onclick="a.switchOff();">    
+        <img name="tivi" src="panasonic.jpg"> 
+    </div>
+    <script>
+        class Television{
+            constructor(_status, _channels, _volume){
+                this.status = _status;
+                this.channels = _channels;
+                this.volume = _volume;
+            }
+            turnOn(){
+                this.status == true;
+                document.tivi.src="panasonic3.jpg"
+            }
+            turnOff(){
+                this.status == false;
+                document.tivi.src="panasonic.jpg"
+            }
+        } 
+
+
+        class Switch{
+            constructor(_status, _tivi){
+                this.status = _status;
+                this.tivi = _tivi;
+            }
+            switchOn(){
+                this.status == true;
+                this.tivi.turnOn();
+            }
+            switchOff(){
+                this.status == false;
+                this.tivi.turnOff();
+            }
+        }
+        let tivi = new Television(false);
+        let a = new Switch(false,tivi);
+
+    </script>
+</body>
+</html>

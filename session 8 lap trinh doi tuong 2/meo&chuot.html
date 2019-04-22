@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Meo</h3>
+    <p id="meo1"></p>
+    <h3>Chuot</h3>
+    <p id="chuot1"></p>
+    <p id="batchuot"></p>
+    <p id="aaa"></p>
+    <input type="button" value="Bá Chó" onclick="batchuot()">
+    <script>
+        function Rat(name, weight, speed, status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = function () {
+                if (this.status) {
+                    return 'i am alive'
+                } else {
+                    return 'i am died'
+                }
+            }
+            this.say = function () {
+                return 'chit chit...'
+            }
+        }
+
+        function Cat(name, weight, speed) {
+            this.name = name
+            this.weight = weight
+            this.speed = speed
+            this.say = function () {
+                return 'meo meo...'
+            }
+            this.catch = function (abc) {
+                return abc.status = false
+            }
+            this.eat = function (abc) {
+                this.weight = this.weight + abc.weight
+                return this.weight
+            }
+        }
+        
+        let meo = new Cat('Tom', 10, 20);
+        document.getElementById('meo1').innerHTML = meo.name + ' ' + meo.weight + 'kg' + ' ' + meo.speed + 'km/h' + ' ' + meo.say()
+        let chuot = new Rat('jerry', 3, 10, true);
+        
+        document.getElementById('chuot1').innerHTML = chuot.name + ' ' + chuot.weight + 'kg ' + chuot.speed + 'km/h ' + chuot.status()
+
+        function batchuot() {
+            if (meo.speed > chuot.speed) {
+                meo.catch(chuot);
+                meo.eat(chuot);
+                document.getElementById('batchuot').innerHTML = meo.weight
+            }else{
+                document.getElementById('aaa').innerHTML = 'chu con non lam'
+            }
+            if(meo.weight>15){
+                alert("bá chó")
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

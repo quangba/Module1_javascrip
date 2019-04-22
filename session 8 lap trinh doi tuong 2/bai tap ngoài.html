@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function daySoNguyen(n) {
+
+            this.n = n
+            this.array = []
+            this.khoiTaoMang = function () {
+                for (let i = 0; i < n; i++) {
+                    let mang = prompt('nham mang:')
+                    this.array.push(mang);
+                }
+               
+      
+                this.in = function (a, b) {
+
+                    for (let j = 0; j < this.array.length; j++) {
+                           if(this.array[j]%a==0&&this.array[j]%b==0){
+                               document.write('BSAB'+'<br>')
+                           } 
+                           else {
+                               if(this.array[j]%a==0) {
+                                   document.write('BSA'+'<br>')
+                               }
+                               else{
+                                   if(this.array[j]%b==0){
+                                       document.write('BSB'+'<br>')
+                                   }
+                                   // còn lại
+                                   else {
+                                   document.write(this.array[j]+'<br>')
+                               }
+                               }
+                           }
+                    }
+                }
+            }
+        }  
+        let x = new daySoNguyen(3)
+        x.khoiTaoMang()
+        document.write(x.array)
+       
+        x.in(2,3)
+
+
+
+    </script>
+</body>
+
+</html>
