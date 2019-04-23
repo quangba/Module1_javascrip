@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function TestNumber(number){
+            let regExp = /^[(0-9)]{4}(?:-[(0-9)]{12})?$/; 
+            if(regExp.test(number)){
+                return true
+            }else{
+                return false
+            }
+        }
+        let nhap = prompt('nhap number: ')
+        document.write(TestNumber(nhap))
+    </script>
+</body>
+</html>

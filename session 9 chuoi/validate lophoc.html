@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function TestNameClass(text){
+             let regExp =/^[CAP]{1,}[0-9]{4}[GHIKLM]{1}$/;
+             if(regExp.test(text)){
+                 return true
+             }else{
+                 return false
+             }
+         }
+         let tenlop=['C0318G', 'M0318G', 'P0323A']
+         for(let i=0;i<tenlop.length;i++)   
+         document.write(TestNameClass(tenlop[i])+'<br>')
+    </script>
+</body>
+</html>
