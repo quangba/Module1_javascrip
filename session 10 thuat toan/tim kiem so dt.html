@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findnumber(t){
+            let regExp = /((096|039)+([0-9]){7}\b)/
+            if(regExp.test(t)){
+                return 'số này là mạng viettel'
+            }else{
+            return 'số này không phải mạng viettel'
+        }
+    }
+        let number = prompt('mời nhập: ')
+        alert(findnumber(number))
+    </script>
+</body>
+</html>
