@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // tao mang 
+        // tao ham hien thi
+        // tao ham min
+        // tao ham max
+        // goi ham
+        let array = [];
+        for (i = 0; i < 100; i++) {
+            array[i] = Math.floor(Math.random() * 101)
+        }
+        function hienthi(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                document.writeln(arr[i])
+                if (i % 10 == 9) {
+                    document.write('<br>')
+                }
+            }
+        }
+        function findmin(arr) {
+            let min = arr[0]
+            for (let i = 0; i < arr.length; i++) {
+                if (min > arr[i]) {
+                    min = arr[i]
+                }
+            }
+            return min
+        }
+        function findmax(arr) {
+            let max = arr[0]
+            for (let i = 0; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+            }
+            return max
+        }
+        function dem(arr, value) {
+            let dem = 0
+            let indexOfdem = 0
+            for (let i = 0; i < arr.length; i++){
+                if(arr[i]==value){
+                    dem +=1;
+                    indexOfdem=i +'<br>'
+                }
+            }
+            return 'số lần xuất hiện là: '+ dem + 'vị trí xuất hiện: ' + indexOfdem
+
+        }
+
+        hienthi(array);
+        minVlue = findmin(array)
+        document.write('giá trị nhỏ nhất: ' + minVlue + '<br>')
+        
+        maxValue = findmax(array)
+        document.write('giá trị lớn nhất: ' + maxValue+'<br>')
+        
+        dem1 = dem(array,6)
+        document.write(dem1)
+    </script>
+</body>
+
+</html>
