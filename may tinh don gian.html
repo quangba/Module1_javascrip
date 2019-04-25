@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Máy Tính</h1>
+    <div id='may tinh'>
+        <input id="result" placeholder="moi nhap"><br>
+        <input type="button" value="1" onclick="set_num(this.value)"/>
+        <input type="button" value="2" onclick="set_num(this.value)"/>
+        <input type="button" value="3" onclick="set_num(this.value)">
+        <input type="button" value="+" onclick="set_num(this.value)">
+        <input type="button" value="-" onclick="set_num(this.value)"><br>
+        <input type="button" value="4" onclick="set_num(this.value)">
+        <input type="button" value="5" onclick="set_num(this.value)">
+        <input type="button" value="6" onclick="set_num(this.value)">
+        <input type="button" value="*" onclick="set_num(this.value)">
+        <input type="button" value="/" onclick="set_num(this.value)"><br>
+        <input type="button" value="7" onclick="set_num(this.value)">
+        <input type="button" value="8" onclick="set_num(this.value)">
+        <input type="button" value="9" onclick="set_num(this.value)">
+        <input type="button" value="=" onclick="ketqua()">
+        <input type="button" value="C" onclick="Delete()">
+    </div>
+    <script>
+        let number = '';
+        function a(id){
+            return document.getElementById(id)
+        }
+        function set_num(num){
+            number += num
+            a('result').value=number
+        }
+        function Delete(){
+            number = ''
+            a('result').value=number
+        }
+        function ketqua(){
+            a('result').value=eval(a('result').value)
+        }
+    </script>
+</body>
+
+</html>
