@@ -1,103 +1,112 @@
-let canvas = document.getElementById('game');
-let context = canvas.getContext('2d');
-let x = 50
-let y = 50
-let dx = 20, dy = 20
+let cansvas = document.getElementById('game');
+let context = cansvas.getContext('2d');
+let x = 100;
+let y = 100;
 let radius = 20;
-let padddle = {
-    width: 900,
-    height: 20,
+let dx = 2, dy = 2;
+let padd = {
     x: 0,
-    y: canvas.height - 20,
-    speed: 35,
-    ismoveleft: false,
-    ismoveright: false,
+    y: cansvas.height - 20,
+    width: 100,
+    height: 20,
+    moveLeft: false,
+    moveRight: false,
+    speed: 20
 }
-let isGameOver = false;
-document.addEventListener('keyup', function (event) {
-    console.log('key up')
-    console.log(event)
-    if (event.keyCode == 37) {
-        padddle.ismoveleft = false
-    } else if (event.keyCode == 39) {
-        padddle.ismoveright = false
-    }
-})
-document.addEventListener('keydown', function (event) {
-    console.log('key down')
-    console.log(event)
-    if (event.keyCode == 37) {
-        padddle.ismoveleft = true
-    } else if (event.keyCode == 39) {
-        padddle.ismoveright = true
-    }
-})
+gameOver = false;
+let score = 0
 
-function thanhngang() {
+// tạo trái banh
+function drawball() {
     context.beginPath();
-    context.fillRect(padddle.x, padddle.y, padddle.width, padddle.height)
-    context.fill();
-    context.closePath();
-}
-function dawball() {
-    context.beginPath();
-    context.arc(x, y, radius, 0, Math.PI * 2)
+    context.arc(x, y, radius, 0, Math.PI * 2);
     context.fillStyle = 'red'
     context.fill();
     context.closePath();
 }
-// setInterval(function(){
-//     hinhtron.clearRect(0 ,0 ,canvas.width,canvas.height)
-//     dawball()
-//     x += 2
-//     y += 2
-// },50)
-function xulyvacham() {
-    if (x < 0 || x > canvas.width - radius) {
-        dx = -dx
-    }
-    if (y < 0) {
-        dy = -dy
-    }
+// tạo thanh ngang
+function Paddle() {
+    context.beginPath();
+    context.fillRect(padd.x, padd.y, padd.width, padd.height)
+    context.fillStyle = 'black'
+    context.closePath();
 }
-function toado() {
+// tao sore
+function number() {
+    context.beginPath();
+    context.font = '30px Arial'
+    context.fillText('score: ' + score, 10, 30)
+    context.fillStyle = 'yellow'
+    context.closePath();
+}
+//tạo tọa độ(bóng di chuyển)
+function coordinates() {
     x += dx;
     y += dy;
 }
-function diemcham() {
-    if (x + radius >= padddle.x && x + radius <= padddle.x + padddle.width && y + radius >= canvas.height - padddle.height) {
-        dy = -dy; 
+// xữ lý va chạm
+function collisionhandling() {
+    if (x < radius || x > cansvas.width - radius) {
+        dx = -dx
+    }
+    if (y < radius) {
+        dy = -dy
     }
 }
-function chuyendong() {
-    if (!isGameOver) {
-        context.clearRect(0, 0, canvas.width, canvas.height)
-        dawball();
-        xulyvacham();
-        toado()
-        thanhngang();
-        diemcham();
-
-        if (padddle.ismoveleft) {
-            padddle.x -= padddle.speed;
-        } else if (padddle.ismoveright) {
-            padddle.x += padddle.speed;
+// sự kiện bàn phím
+document.addEventListener('keydown', function (event) {
+    console.log(event);
+    if (event.keyCode == 37) {
+        padd.moveLeft = true;
+    } else if (event.keyCode == 39) {
+        padd.moveRight = true;
+    }
+    document.addEventListener('keyup', function (event) {
+        console.log(event);
+        if (event.keyCode == 37) {
+            padd.moveLeft = false;
+        } else if (event.keyCode == 39) {
+            padd.moveRight = false;
         }
-        if (padddle.x < 0) {
-            padddle.x = 0;
+    })
+})
+// di chuyển thanh ngang
+function moveBar() {
+    if (padd.moveLeft) {
+        padd.x -= padd.speed
+    } else if (padd.moveRight) {
+        padd.x += padd.speed
+    }
+    if (padd.x < 0) {
+        padd.x = 0
+    } else if (padd.x >= cansvas.width - padd.width) {
+        padd.x = cansvas.width - padd.width
+    }
+}
+// xữ lý va chạm bóng và thang ngang và tính điểm
+function ball_bar() {
+    if (x + radius >= padd.x && x + radius <= padd.x + padd.width && y + radius >= cansvas.height - padd.height) {
+        dy = -dy;
+        score++;
+    }
+}
+// tổng hợp
+function GameBall() {
+    if (!gameOver) {
+        context.clearRect(0, 0, cansvas.width, cansvas.height)
+        drawball();
+        Paddle();
+        number();
+        coordinates();
+        collisionhandling();
+        moveBar();
+        ball_bar();
+        if (y > cansvas.height - radius) {     //bóng đúng điều kiện nên dừng lại, không gọi vào hàm requestAni...nữa
+            gameOver = true;
         }
-        else if (padddle.x > canvas.width - padddle.width) {
-            padddle.x = canvas.width - padddle.width
-        }
-        if (y > canvas.height - radius) {
-            isGameOver = true;
-        }
-        requestAnimationFrame(chuyendong);
+        requestAnimationFrame(GameBall); //hàm chuyển động
     } else {
-        alert('GAME OVER')
+        alert('GAME OVER!')
     }
 }
-
-
-
-chuyendong();
+GameBall();
