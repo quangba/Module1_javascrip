@@ -73,61 +73,61 @@
         //         test_SNT(arr[j])                         
         //     }
         // TÌM CÓ BAO NHIÊU SỐ NGUYÊN TỐ TRONG 1 DÃY SỐ
-        // let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-        // let count =0
-        // function test_SNT(n) {
-        //         let flag = true;
-        //         if (n < 2) {
-        //             flag = false;
-        //         }else if(n==2){
-        //             flag=true
-        //         } else {
-        //             for (let i = 2; i < n; i++) {
-        //                 if (n % i == 0) {
-        //                     flag = false;
-        //                     break;
-        //                 }
-        //             }
-        //         }
-        //         if (flag == true) {
-        //            document.write(n + ' là số nguyên tố' +'<br>')     
-        //            count += 1
-        //     }   
-        // }
-        //     for(let j = 0; j<arr.length; j++){
-        //         test_SNT(arr[j])
-
-        //     }
-        //     document.write('có '+count+' số nguyên tố')
-        //  HIỂN THỊ CÁC SỐ NGUYÊN TỐ ĐẦU   TIÊN
-        function KT_SNT(n) {
-            let flag = true;
-            if (n < 2) {
-                flag = false;
-            } else {
-                for (i = 2; i < n; i++) {
-                    if (n % i == 0) {
-                        flag = false
-                        break;
+        let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+        let count =0
+        function test_SNT(n) {
+                let flag = true;
+                if (n < 2) {
+                    flag = false;
+                }else if(n==2){
+                    flag=true
+                } else {
+                    for (let i = 2; i < n; i++) {
+                        if (n % i == 0) {
+                            flag = false;
+                            break;
+                        }
                     }
                 }
-            }
-            if (flag) {
-                return true
-            } else {
-                return false
-            }
+                if (flag == true) {
+                   document.write(n + ' là số nguyên tố' +'<br>')     
+                   count += 1
+            }   
         }
-        let N=2
-        let number = parseInt(prompt('mời nhập '));
-        let count = 0;
-        while(count < number){
-            if(KT_SNT(N)){
-                document.write('so nguyen to: '+ N + '<br>')
-                count = count +1;
+            for(let j = 0; j<arr.length; j++){
+                test_SNT(arr[j])
+
             }
-            N++;
-        }
+            document.write('có '+count+' số nguyên tố')
+        //  HIỂN THỊ CÁC SỐ NGUYÊN TỐ ĐẦU   TIÊN
+        // function KT_SNT(n) {
+        //     let flag = true;
+        //     if (n < 2) {
+        //         flag = false;
+        //     } else {
+        //         for (i = 2; i < n; i++) {
+        //             if (n % i == 0) {
+        //                 flag = false
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //     if (flag) {
+        //         return true
+        //     } else {
+        //         return false
+        //     }
+        // }
+        // let N=2
+        // let number = parseInt(prompt('mời nhập '));
+        // let count = 0;
+        // while(count < number){
+        //     if(KT_SNT(N)){
+        //         document.write('so nguyen to: '+ N + '<br>')
+        //         count = count +1;
+        //     }
+        //     N++;
+        // }
 
 
     </script>

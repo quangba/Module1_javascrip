@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function tryRemoveFromArray(array, index) {
+            for (let i = 0; i < array.length; i++) {
+                if (index == i) {
+                    array.splice(index, 1);
+                }
+            }
+            return array;
+        }
+        let arr = [2, 4, 5, 7, 1, 2, 5, 4, 6, 3, 2];
+        document.write('array:' + '[' + arr + ']' + '<br>');
+        let new_arr = tryRemoveFromArray(arr, 7);
+        document.write('new array: ' + '[' + new_arr + ']');
+    </script>
+</body>
+
+</html>

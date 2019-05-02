@@ -8,13 +8,16 @@
 </head>
 <body>
     <script>
-        let array = [];
-        for(let i=0;i<10;i++){
-            let n = prompt('mời bạn nhập: ');
-            array.push(n)
-        }
-        document.write('mãng mới khởi tạo: '+array +'<br>')
-        document.write('mãng sau khi đảo ngược là: '+array.reverse());
+        // let array = [];
+        // for(let i=0;i<10;i++){
+        //     let n = prompt('mời bạn nhập: ');
+        //     array.push(n)
+        // }
+        // document.write('mãng mới khởi tạo: '+array +'<br>')
+        // document.write('mãng sau khi đảo ngược là: '+array.reverse());
+
+
+
         // let first = 0
         // let last = array.length - 1
         // while(first<last){
@@ -25,6 +28,17 @@
         //     last--;   
         // }
         // document.write('mãng sau khi đảo ngược là: '+array)
+        function swap(a, b) {
+var temp = a;
+a = b;
+b = temp;
+document.write("a = " + a + ", b = " + b);
+}
+
+var a = 5;
+var b = 10;
+swap(a, b);
+
     </script>
 </body>
 </html>

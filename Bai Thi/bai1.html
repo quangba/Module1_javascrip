@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = [];
+        for (let i = 0; i < 10; i++) {
+            let arr = prompt('enter point: ');
+            array.push(arr);
+        }
+        document.write('point: ' + array + '<br>');
+        function findMinScore(arr) {
+            let min = arr[0];
+            for (let j = 0; j < arr.length; j++) {
+                if (min > arr[j]) {
+                    min = arr[j];
+                }
+            }
+            return min;
+        }
+        let minValue = findMinScore(array);
+        document.write('point min is: ' + minValue);
+    </script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@ let context = cansvas.getContext('2d');
 let x = 100;
 let y = 100;
 let radius = 20;
-let dx = 2, dy = 2;
+let dx = 5, dy = 5;
 let padd = {
     x: 0,
     y: cansvas.height - 20,
@@ -12,23 +12,23 @@ let padd = {
     moveLeft: false,
     moveRight: false,
     speed: 20
-}
-gameOver = false;
-let score = 0
+};
+let gameOver = false;
+let score = 0;
 
 // tạo trái banh
 function drawball() {
     context.beginPath();
     context.arc(x, y, radius, 0, Math.PI * 2);
-    context.fillStyle = 'red'
+    context.fillStyle = 'red';
     context.fill();
     context.closePath();
 }
 // tạo thanh ngang
 function Paddle() {
     context.beginPath();
-    context.fillRect(padd.x, padd.y, padd.width, padd.height)
-    context.fillStyle = 'black'
+    context.fillStyle = 'black';
+    context.fillRect(padd.x, padd.y, padd.width, padd.height);
     context.closePath();
 }
 // tao sore
@@ -106,7 +106,7 @@ function GameBall() {
         }
         requestAnimationFrame(GameBall); //hàm chuyển động
     } else {
-        alert('GAME OVER!')
+        alert('GAME OVER!');
     }
 }
 GameBall();
